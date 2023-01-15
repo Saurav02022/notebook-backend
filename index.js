@@ -20,6 +20,10 @@ const { noteBook } = require("./routes/noteBook.router");
 app.use("/users", postRouter);
 app.use("/notes", noteBook);
 
+app.get("/", (req, res) => {
+  res.send("Welcome to the notebook application");
+});
+
 app.listen(process.env.port, async () => {
   try {
     await config;
